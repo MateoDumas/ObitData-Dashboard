@@ -18,7 +18,6 @@ export function useLiveData(options: UseLiveDataOptions = {}) {
     wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws',
     autoConnect = false, // Changed: Don't auto-connect by default
     onConnect,
-    onDisconnect,
     silent = true, // Default to silent mode
   } = options;
 
@@ -50,7 +49,7 @@ export function useLiveData(options: UseLiveDataOptions = {}) {
       };
     }
 
-    const socket = initWebSocket({
+    initWebSocket({
       url: wsUrl,
       maxReconnectAttempts: 2, // Fail fast
       reconnectInterval: 5000,

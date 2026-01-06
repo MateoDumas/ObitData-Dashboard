@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { Navbar } from './Navbar';
 import { Sidebar } from './Sidebar';
-import clsx from 'clsx';
 
 export interface DashboardLayoutProps {
   children: ReactNode;

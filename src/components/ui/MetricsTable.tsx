@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ArrowUp, ArrowDown, ChevronUp, ChevronDown } from 'lucide-react';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 import { useMetricsStore } from '@/store/metrics.store';
 import { formatValue, formatTimestamp } from '@/utils/dataParser';
 import { Card } from './Card';

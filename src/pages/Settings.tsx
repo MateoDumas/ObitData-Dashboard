@@ -1,6 +1,5 @@
 import { useUIStore } from '@/store/ui.store';
 import { useMetricsStore } from '@/store/metrics.store';
-import { useAlertsStore } from '@/store/alerts.store';
 import { Card } from '@/components/ui/Card';
 import { LiveIndicator } from '@/components/ui/LiveIndicator';
 import { AlertRulesManager } from '@/components/alerts/AlertRulesManager';

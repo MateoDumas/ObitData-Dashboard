@@ -71,26 +71,19 @@ export function ComparisonChart({
     const yAxis = d3.axisLeft(yScale);
 
     // Add grid
+    const xGrid = d3.axisBottom(xScale).tickSize(-innerHeight).tickFormat('' as any);
+    const yGrid = d3.axisLeft(yScale).tickSize(-innerWidth).tickFormat('' as any);
+    
     g.append('g')
       .attr('class', 'grid')
       .attr('transform', `translate(0,${innerHeight})`)
-      .call(
-        xAxis
-          .copy()
-          .tickSize(-innerHeight)
-          .tickFormat('' as any)
-      )
+      .call(xGrid)
       .attr('stroke-opacity', 0.1)
       .attr('stroke-dasharray', '3,3');
 
     g.append('g')
       .attr('class', 'grid')
-      .call(
-        yAxis
-          .copy()
-          .tickSize(-innerWidth)
-          .tickFormat('' as any)
-      )
+      .call(yGrid)
       .attr('stroke-opacity', 0.1)
       .attr('stroke-dasharray', '3,3');
 

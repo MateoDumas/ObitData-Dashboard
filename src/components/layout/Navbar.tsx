@@ -1,7 +1,6 @@
 import { Moon, Sun, Menu } from 'lucide-react';
 import { useUIStore } from '@/store/ui.store';
 import { LiveIndicator } from '@/components/ui/LiveIndicator';
-import clsx from 'clsx';
 
 export interface NavbarProps {
   onMenuClick?: () => void;

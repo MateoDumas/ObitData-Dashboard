@@ -8,7 +8,7 @@ export interface LiveIndicatorProps {
 
 export function LiveIndicator({ className, showText = true }: LiveIndicatorProps) {
   // Don't auto-connect just to show status
-  const { isConnected, connectionStatus } = useLiveData({ autoConnect: false });
+  const { connectionStatus } = useLiveData({ autoConnect: false });
 
   const statusConfig = {
     connected: {

@@ -27,7 +27,6 @@ export function LineChartWithZoom({
   dimensions = {},
   showGrid = true,
   showArea = false,
-  animated = true,
   className,
 }: LineChartWithZoomProps) {
   const svgRef = useRef<SVGSVGElement>(null);

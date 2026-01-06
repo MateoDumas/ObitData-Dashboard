@@ -38,7 +38,7 @@ export interface AlertsState {
   deleteRule: (id: string) => void;
   toggleRule: (id: string) => void;
   
-  addAlert: (alert: Omit<Alert, 'id' | 'timestamp'>) => void;
+  addAlert: (alert: Omit<Alert, 'id' | 'timestamp'> & { soundEnabled?: boolean }) => void;
   acknowledgeAlert: (id: string) => void;
   clearAlert: (id: string) => void;
   clearAllAlerts: () => void;
@@ -186,6 +186,7 @@ export const useAlertsStore = create<AlertsState>()(
               threshold: rule.threshold,
               severity: rule.severity,
               message: rule.message || `${metricName} ${rule.condition} ${rule.threshold}`,
+              acknowledged: false,
               soundEnabled: rule.soundEnabled !== false,
             });
           }

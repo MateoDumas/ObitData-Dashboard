@@ -41,7 +41,7 @@ export function HeatMap({
     const svg = d3.select(svgRef.current);
     svg.selectAll('*').remove();
 
-    const { width: innerWidth, height: innerHeight } = getInnerDimensions(chartDimensions);
+    const { width: innerWidth } = getInnerDimensions(chartDimensions);
     const { margin } = chartDimensions;
 
     const g = svg
@@ -59,8 +59,6 @@ export function HeatMap({
     // Calculate buckets
     const bucketsPerRow = Math.floor(innerWidth / cellSize);
     const totalBuckets = Math.floor((timeRange / (1000 * 60)) / 5); // 5-minute buckets
-    const rows = Math.ceil(totalBuckets / bucketsPerRow);
-    const actualHeight = rows * cellSize;
 
     // Create color scale
     const values = allDataPoints.map((d) => d.y);

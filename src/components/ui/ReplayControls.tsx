@@ -1,4 +1,4 @@
-import { Play, Pause, RotateCcw, SkipBack, SkipForward } from 'lucide-react';
+import { Play, Pause, RotateCcw } from 'lucide-react';
 import { useReplay } from '@/hooks/useReplay';
 import { Metric } from '@/store/metrics.store';
 import clsx from 'clsx';

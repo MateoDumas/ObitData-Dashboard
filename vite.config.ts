@@ -15,9 +15,10 @@ export default defineConfig({
     open: true,
   },
   // GitHub Pages configuration
-  base: process.env.NODE_ENV === 'production' ? '/ObitData-Dashboard/' : '/',
+  base: '/ObitData-Dashboard/',
   build: {
     outDir: 'dist',
     sourcemap: false,
+    assetsDir: 'assets',
   },
 })

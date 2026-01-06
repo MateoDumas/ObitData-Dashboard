@@ -24,7 +24,7 @@ export function ThreeChart({ data, className }: ThreeChartProps) {
 
       // Cleanup previous scene
       if (sceneRef.current) {
-        const { scene, renderer, camera } = sceneRef.current;
+        const { scene, renderer } = sceneRef.current;
         renderer.dispose();
         // Remove all objects from scene
         while (scene.children.length > 0) {

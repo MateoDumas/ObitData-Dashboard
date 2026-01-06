@@ -129,7 +129,7 @@ export function LineChart({
           .attr('d', areaGenerator);
 
         if (animated) {
-          animatePath(area, 750);
+          animatePath(area as any, 750);
         }
       });
     }
@@ -138,14 +138,14 @@ export function LineChart({
     data.forEach((series) => {
       const line = g
         .append('path')
-        .datum(series.data)
+        .datum(series.data as any)
         .attr('fill', 'none')
         .attr('stroke', series.color || '#0ea5e9')
         .attr('stroke-width', 2)
-        .attr('d', lineGenerator);
+        .attr('d', lineGenerator as any);
 
       if (animated) {
-        animatePath(line, 750);
+        animatePath(line as any, 750);
       }
     });
 

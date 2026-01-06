@@ -19,8 +19,11 @@ function App() {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
+  // Get base path for GitHub Pages
+  const basePath = import.meta.env.BASE_URL || '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basePath}>
       <DashboardLayout>
         <Routes>
           <Route path="/" element={<Dashboard />} />

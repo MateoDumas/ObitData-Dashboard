@@ -1,10 +1,10 @@
-import { X, Bell, BellOff, CheckCircle } from 'lucide-react';
+import { Bell, BellOff, CheckCircle } from 'lucide-react';
 import { useAlertsStore, Alert } from '@/store/alerts.store';
 import { formatTimestamp } from '@/utils/dataParser';
 import clsx from 'clsx';
 
 export function AlertPanel() {
-  const { activeAlerts, acknowledgeAlert, clearAlert, clearAllAlerts, soundEnabled, toggleSound } =
+  const { activeAlerts, acknowledgeAlert, clearAllAlerts, soundEnabled, toggleSound } =
     useAlertsStore();
 
   const getSeverityColor = (severity: Alert['severity']) => {

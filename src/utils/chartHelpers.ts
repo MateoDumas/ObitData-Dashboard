@@ -93,19 +93,19 @@ export function createAreaGenerator(
 /**
  * Format time axis
  */
-export function formatTimeAxis(scale: d3.ScaleTime<number, number>): string {
+export function formatTimeAxis(scale: d3.ScaleTime<number, number>): (date: Date | d3.NumberValue) => string {
   const domain = scale.domain();
-  const range = domain[1].getTime() - domain[0].getTime();
+  const range = (domain[1] as Date).getTime() - (domain[0] as Date).getTime();
   
   if (range < 60 * 60 * 1000) {
     // Less than 1 hour
-    return d3.timeFormat('%H:%M:%S');
+    return d3.timeFormat('%H:%M:%S') as any;
   } else if (range < 24 * 60 * 60 * 1000) {
     // Less than 1 day
-    return d3.timeFormat('%H:%M');
+    return d3.timeFormat('%H:%M') as any;
   } else {
     // More than 1 day
-    return d3.timeFormat('%d/%m %H:%M');
+    return d3.timeFormat('%d/%m %H:%M') as any;
   }
 }
 

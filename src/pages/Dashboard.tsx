@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Cpu, HardDrive, Network, Activity } from 'lucide-react';
 import { useLiveData } from '@/hooks/useLiveData';
 import { useMetrics } from '@/hooks/useMetrics';
@@ -9,7 +9,6 @@ import { Card } from '@/components/ui/Card';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { MetricsTable } from '@/components/ui/MetricsTable';
 import { Loader } from '@/components/ui/Loader';
-import { formatValue } from '@/utils/dataParser';
 import { useUIStore } from '@/store/ui.store';
 import { useMetricsStore } from '@/store/metrics.store';
 import { generateMultipleMockMetrics, startMockStream } from '@/utils/mockData';
@@ -18,7 +17,7 @@ import { useToastStore } from '@/store/toast.store';
 export function Dashboard() {
   // Don't auto-connect to WebSocket - use mock data instead
   const { isConnected } = useLiveData({ autoConnect: false });
-  const { chartData, latestMetrics, hasData, metrics } = useMetrics();
+  const { chartData, latestMetrics, hasData } = useMetrics();
   const selectedTimeRange = useUIStore((state) => state.selectedTimeRange);
   const { success } = useToastStore();
 
@@ -49,12 +48,9 @@ export function Dashboard() {
   const cpuData = chartData.find((d) => d.id === 'cpu-usage') || chartData[0];
   const memoryData = chartData.find((d) => d.id === 'memory-usage') || chartData[1];
   const networkInData = chartData.find((d) => d.id === 'network-in');
-  const networkOutData = chartData.find((d) => d.id === 'network-out');
-
   const latestCpu = latestMetrics.find((m) => m.id === 'cpu-usage');
   const latestMemory = latestMetrics.find((m) => m.id === 'memory-usage');
   const latestNetworkIn = latestMetrics.find((m) => m.id === 'network-in');
-  const latestNetworkOut = latestMetrics.find((m) => m.id === 'network-out');
 
   // Get previous values for trend indicators
   const getPreviousValue = (metricId: string) => {
