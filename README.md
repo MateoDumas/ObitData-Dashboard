@@ -1,235 +1,98 @@
-# ObitData Dashboard
+# 📊 ObitData Dashboard
 
-Dashboard en tiempo real para visualización de métricas con React + Vite + TypeScript.
+<div align="center">
+  <img src="public/logo.svg" alt="ObitData Logo" width="300" />
+  <br/>
+  <br/>
 
-## 🚀 Características
+  [![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  [![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+  [![D3.js](https://img.shields.io/badge/D3.js-7.8-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white)](https://d3js.org/)
 
-### Core
-- **Datos en streaming**: WebSocket para actualizaciones en tiempo real
-- **Visualizaciones interactivas**: Gráficos con D3.js (Line, Bar, HeatMap)
-- **UI reactiva**: Actualización automática de componentes
-- **Dark/Light mode**: Tema claro y oscuro
-- **Indicador Live**: Estado de conexión en tiempo real
-- **Arquitectura escalable**: Store con Zustand, hooks personalizados
+  <p align="center">
+    <strong>Dashboard analítico de alto rendimiento para visualización de métricas en tiempo real.</strong>
+    <br />
+    <a href="https://mateodumas.github.io/ObitData-Dashboard/">Ver Demo en Vivo</a>
+  </p>
+</div>
 
-### Alertas y Monitoreo
-- **Sistema de alertas**: Reglas configurables con umbrales
-- **Notificaciones visuales**: Panel de alertas en tiempo real
-- **Sonidos de alerta**: Notificaciones audibles por severidad
-- **Múltiples condiciones**: Mayor que, menor que, igual, etc.
+---
 
-### Visualización Avanzada
-- **Zoom y Pan**: Interactividad avanzada en gráficos
-- **Comparación de períodos**: Comparar rangos temporales lado a lado
-- **Gráficos 3D**: Visualizaciones 3D con Three.js (opcional)
-- **HeatMap temporal**: Visualización de patrones temporales
+## 💡 Sobre el Proyecto
 
-### Exportación y Análisis
-- **Exportar datos**: CSV y JSON
-- **Exportar gráficos**: PNG y SVG
-- **Exportar datos de gráficos**: JSON estructurado
+**ObitData** es una plataforma de visualización de datos diseñada para manejar flujos de información en tiempo real con una interfaz moderna y reactiva. Construido con las últimas tecnologías del ecosistema React, este dashboard demuestra capacidades avanzadas de manejo de estado, optimización de renderizado y visualización de datos complejos.
 
-### Funcionalidades Avanzadas
-- **Selector de métricas**: Búsqueda y filtrado de métricas
-- **Replay de datos**: Reproducir datos históricos
-- **Predicciones**: Regresión lineal y promedios móviles
-- **Anotaciones**: Marcar eventos importantes en el tiempo
-- **Múltiples dashboards**: Guardar y gestionar diferentes configuraciones
-- **Modo fullscreen**: Para presentaciones
-- **Webhooks**: Integración con sistemas externos
+El objetivo principal es proporcionar a los analistas y tomadores de decisiones una herramienta robusta para monitorear KPIs, detectar anomalías mediante alertas configurables y explorar tendencias históricas con herramientas de análisis profundo.
 
-## 📦 Instalación
+## 🚀 Características Principales
 
-```bash
-npm install
-```
+### ⚡ Core & Performance
+- **Streaming en Tiempo Real**: Arquitectura basada en WebSockets (simulados) para actualizaciones instantáneas sin recargas.
+- **Estado Global Optimizado**: Gestión de estado eficiente con **Zustand** para minimizar re-renders innecesarios.
+- **Modo Oscuro/Claro**: Adaptabilidad total de la interfaz con persistencia de preferencias.
 
-## 🏃 Desarrollo
+### 📈 Visualización Avanzada
+- **Gráficos Interactivos**: Implementaciones customizadas usando **D3.js** y **Recharts**.
+  - Zoom y Pan fluido en series temporales.
+  - Gráficos 3D interactivos (Three.js).
+  - Heatmaps temporales para detección de patrones.
+- **Comparación de Datos**: Herramientas para contrastar métricas entre diferentes periodos de tiempo.
 
-```bash
-npm run dev
-```
+### 🔔 Monitoreo Inteligente
+- **Sistema de Alertas**: Motor de reglas configurable (>, <, =, etc.) con umbrales personalizados.
+- **Notificaciones Multimedia**: Feedback visual y sonoro ante eventos críticos.
+- **Live Indicator**: Monitor de estado de conexión y latencia.
 
-La aplicación estará disponible en `http://localhost:3000`
+### 🛠 Herramientas de Análisis
+- **Replay Histórico**: Funcionalidad tipo "DVR" para reproducir eventos pasados y analizar incidentes.
+- **Predicciones (ML Básico)**: Algoritmos de regresión lineal y suavizado exponencial para proyección de tendencias.
+- **Exportación Flexible**: Descarga de reportes en CSV, JSON, y capturas de gráficos en PNG/SVG.
 
-## 🏗️ Build
+## 🛠️ Stack Tecnológico
 
-```bash
-npm run build
-```
+- **Frontend**: React 18, TypeScript
+- **Build Tool**: Vite
+- **Estilos**: Tailwind CSS, CLSX
+- **Visualización**: D3.js, Three.js
+- **Estado**: Zustand
+- **Router**: React Router DOM
+- **Iconos**: Lucide React
 
-## 🚀 Despliegue en GitHub Pages
+## 📦 Instalación y Desarrollo
 
-### Opción 1: GitHub Actions (Recomendado - Automático)
-
-1. **Habilita GitHub Pages en tu repositorio:**
-   - Ve a Settings → Pages
-   - Source: GitHub Actions
-
-2. **El workflow se ejecutará automáticamente:**
-   - Cada push a `main` desplegará automáticamente
-   - El workflow está en `.github/workflows/deploy.yml`
-
-3. **Tu app estará disponible en:**
-   ```
-   https://mateodumas.github.io/ObitData-Dashboard/
-   ```
-
-### Opción 2: Deploy Manual
-
-1. **Instala gh-pages:**
+1. **Clonar el repositorio**
    ```bash
-   npm install --save-dev gh-pages
+   git clone https://github.com/MateoDumas/ObitData-Dashboard.git
+   cd ObitData-Dashboard
    ```
 
-2. **El base path ya está configurado en `vite.config.ts`:**
-   ```typescript
-   base: '/ObitData-Dashboard/',
-   ```
-
-3. **Despliega:**
+2. **Instalar dependencias**
    ```bash
-   npm run deploy
+   npm install
    ```
 
-### URL de tu Dashboard
+3. **Iniciar servidor de desarrollo**
+   ```bash
+   npm run dev
+   ```
+   La aplicación estará disponible en `http://localhost:5173`
 
-Tu dashboard estará disponible en:
-```
-https://mateodumas.github.io/ObitData-Dashboard/
-```
+## 🚀 Despliegue (CI/CD)
 
-El base path ya está configurado correctamente en `vite.config.ts`.
+El proyecto cuenta con integración continua mediante **GitHub Actions** para despliegue automático en GitHub Pages.
 
-## 📁 Estructura del Proyecto
+### Opción Automática (Recomendada)
+Cada push a la rama `main` dispara el workflow de despliegue configurado en `.github/workflows/deploy.yml`.
 
-```
-src/
-├── api/              # WebSocket y API REST
-├── components/       # Componentes React
-│   ├── charts/      # Visualizaciones D3.js
-│   ├── layout/      # Navbar, Sidebar, Layout
-│   └── ui/          # Componentes UI básicos
-├── hooks/           # Hooks personalizados
-├── pages/           # Páginas principales
-├── store/           # Estado global (Zustand)
-├── utils/           # Utilidades y helpers
-└── styles/          # Estilos globales
+### Opción Manual
+```bash
+npm run deploy
 ```
 
-## ⚙️ Configuración
+---
 
-### Variables de Entorno
-
-Crea un archivo `.env` en la raíz:
-
-```env
-VITE_API_BASE_URL=http://localhost:8000/api
-VITE_WS_URL=ws://localhost:8000/ws
-```
-
-### WebSocket
-
-El dashboard se conecta automáticamente al WebSocket configurado. El formato esperado de mensajes:
-
-```json
-{
-  "id": "metric-id",
-  "name": "Metric Name",
-  "value": 42.5,
-  "timestamp": 1234567890,
-  "unit": "%",
-  "category": "system"
-}
-```
-
-O para batch:
-
-```json
-[
-  { "id": "metric-1", "value": 10, ... },
-  { "id": "metric-2", "value": 20, ... }
-]
-```
-
-## 🎨 Tecnologías
-
-- **React 18** - Framework UI
-- **TypeScript** - Tipado estático
-- **Vite** - Build tool
-- **D3.js** - Visualizaciones
-- **Zustand** - Estado global
-- **Tailwind CSS** - Estilos
-- **React Router** - Navegación
-
-## 📊 Componentes de Gráficos
-
-- **LineChart**: Gráfico de líneas con animaciones
-- **LineChartWithZoom**: Gráfico con zoom y pan interactivo
-- **BarChart**: Gráfico de barras
-- **HeatMap**: Mapa de calor temporal
-- **ComparisonChart**: Comparación de períodos temporales
-- **ThreeChart**: Gráficos 3D con Three.js (requiere `npm install three`)
-
-## 🔧 Hooks Personalizados
-
-- `useLiveData`: Maneja conexión WebSocket
-- `useMetrics`: Acceso a métricas del store
-- `useResize`: Tracking de dimensiones
-- `useReplay`: Reproducción de datos históricos
-- `useFullscreen`: Control de modo pantalla completa
-
-## 🎯 Componentes UI Adicionales
-
-- `AlertPanel`: Panel de alertas en tiempo real
-- `AlertRulesManager`: Gestor de reglas de alertas
-- `MetricSelector`: Selector y búsqueda de métricas
-- `ExportButton`: Exportación de datos y gráficos
-- `ReplayControls`: Controles de reproducción
-
-## 📦 Stores Adicionales
-
-- `alerts.store`: Sistema de alertas y reglas
-- `annotations.store`: Anotaciones en gráficos
-- `dashboards.store`: Múltiples dashboards guardados
-
-## 🎨 Funcionalidades Detalladas
-
-### Sistema de Alertas
-1. Ve a **Settings** → **Reglas de Alertas**
-2. Crea reglas con condiciones (>, <, >=, <=, =)
-3. Define umbrales y severidad (info, warning, error, critical)
-4. Las alertas aparecen automáticamente cuando se disparan
-
-### Exportación
-- **CSV/JSON**: Exporta métricas para análisis externo
-- **PNG/SVG**: Exporta gráficos como imágenes
-- Usa el botón "Exportar" en el Dashboard
-
-### Zoom y Pan
-- Usa la rueda del mouse para hacer zoom
-- Arrastra para mover el gráfico
-- Botón "Reset" para volver a la vista original
-
-### Replay de Datos
-- Reproduce datos históricos a velocidad configurable
-- Útil para análisis y presentaciones
-
-### Predicciones
-- Regresión lineal para tendencias
-- Promedios móviles
-- Suavizado exponencial
-
-## 🔌 Integración Webhooks
-
-```typescript
-import { sendWebhook, createAlertWebhookPayload } from '@/utils/webhooks';
-
-// Envío de webhook cuando se dispara una alerta
-const payload = createAlertWebhookPayload(alert);
-await sendWebhook(webhookConfig, payload);
-```
-
-## 📝 Licencia
-
-MIT
+<div align="center">
+  Desarrollado con ❤️ por <strong>Mateo Dumas</strong>
+</div>
